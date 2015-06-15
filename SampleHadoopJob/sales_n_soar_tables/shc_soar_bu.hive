@@ -1,0 +1,22 @@
+CREATE EXTERNAL TABLE `default.shc_soar_bu_1`(
+  `createTs` string,
+  `shcsoarnbr` string,
+  `shcsoarnm` string,
+  `srssoarnbr` string,
+  `kmtsoarnbr` string,
+  `rowcreatts` string,
+  `rowcreatuserid` string,
+  `rowmodts` string,
+  `rowmoduserid` string)
+ROW FORMAT DELIMITED
+  FIELDS TERMINATED BY '\u0001'
+  LINES TERMINATED BY '\n'
+STORED AS INPUTFORMAT
+  'org.apache.hadoop.mapred.TextInputFormat'
+OUTPUTFORMAT
+  'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION
+  'hdfs://heahadn01.hadoop.searshc.com:8020/work/syw_member_repo/Telluride/ShcSoarBu'
+TBLPROPERTIES (
+  'transient_lastDdlTime'='1425077056')
+

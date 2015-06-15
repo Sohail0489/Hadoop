@@ -1,0 +1,175 @@
+SET DEFAULT_PARALLEL 20;
+srs_soar_bu = LOAD '/work/syw_member_repo/Telluride/rd_srs_soar_bu' using PigStorage('\u0001') AS(
+CreateTs:chararray,
+  itm_no :chararray
+      ,div_no :chararray
+      ,div_nm :chararray
+      ,soar_no :chararray
+      ,soar_nm :chararray
+      ,ln_no :chararray
+      ,ln_ds :chararray
+      ,sbl_no :chararray
+      ,sbl_ds :chararray
+      ,prd_ds :chararray
+);
+
+Kmt_Soar_Bu = LOAD '/work/syw_member_repo/Telluride/Rd_Kmt_Soar_Bu' using PigStorage('\u0001') AS(
+CreateTs:chararray,
+SOAR_NO :chararray                  
+        ,SOAR_NM :chararray                      
+        ,FP_UNIT_NBR :chararray                  
+        ,FP_UNIT_DESC :chararray                 
+        ,FP_DVSN_NBR :chararray                  
+        ,FP_DVSN_DESC :chararray                 
+        ,FP_DEPT_NBR :chararray                  
+        ,FP_DEPT_DESC :chararray                 
+        ,FP_CATG_GRP_NBR:chararray               
+        ,FP_CATG_GRP_DESC :chararray             
+        ,CATG_NBR  :chararray                    
+        ,CATG_DESC :chararray                    
+        ,sub_catg_nbr :chararray                 
+        ,sub_catg_desc  :chararray               
+        ,KSN_ID    :chararray                    
+        ,KSN_DESC :chararray                     
+        ,REPT_COST_AMT :chararray
+
+);
+
+
+SrsSlsPtd = LOAD '/work/syw_member_repo/Telluride/SywrSrsSlsPtdMstrCrm' using PigStorage('\u0001') AS(
+CreateTs:chararray
+,CustIntractnId:chararray
+,TranLnNbr:chararray
+,LyltyCardNbr:chararray
+,TranDt:chararray
+,FacilIdNbr:chararray
+,FacilSbtCd:chararray
+,DivNbr:chararray
+,ItemNbr:chararray
+,SoarNbr:chararray
+,LnItemTranTypeCd:chararray
+,CostPerUnit:chararray
+,ItemRegPrcAmt:chararray
+,PluAmtTypCd:chararray
+,GrsSls:chararray
+,MrkdnAmt:chararray
+,ProdQty:chararray
+,BurnAmt:chararray	
+,MerchCogs:chararray
+,NetMerchSls:chararray
+,Mrgn:chararray
+,MscAcctNbr:chararray
+,OnlineOrdId:chararray);
+
+KmtSlsPtd = LOAD '/work/syw_member_repo/Telluride/SywrKmtSlsPtdMstrCrm' using PigStorage('\u0001') AS(CreateTs:chararray
+,CustIntractnId:chararray
+,SaleSeqNbr:chararray
+,LyltyCardNbr:chararray
+,TranDt:chararray
+,LocnNbr:chararray
+,KsnId:chararray
+,SoarNbr:chararray
+,SellTypeCd:chararray
+,SkuPrcTypeCd:chararray
+,OnlineOrdId:chararray
+,KmtSell:chararray
+,MrkdnAmt:chararray
+,SlsQty:chararray
+,MerchCogs:chararray
+,Mrgn:chararray
+,BurnAmt:chararray
+,MygoferOrderInd:chararray);
+
+
+
+
+ShcSoarBu = LOAD '/work/syw_member_repo/Telluride/ShcSoarBu' using PigStorage('\u0001') AS
+(CreateTs:chararray
+,ShcSoarNbr:chararray                    
+        ,ShcSoarNm:chararray                     
+        ,SrsSoarNbr:chararray                    
+        ,KmtSoarNbr:chararray                    
+        ,RowCreatTs:chararray                    
+        ,RowCreatUserId:chararray                
+        ,RowModTs:chararray                      
+        ,RowModUserId:chararray);
+
+
+
+SrsSlsPtdReq = FILTER SrsSlsPtd BY FacilSbtCd IN ('A','B','C','D','G1','G2','N1','N2','N4','M') AND (DivNbr != '0' OR DivNbr != '79');
+
+srs_year = FILTER SrsSlsPtdReq  BY ((INT)DaysBetween(ToDate(CreateTs,'yyyy-MM-dd HH:mm:ss'), ToDate(TranDt,'yyyy-MM-dd')) <= 365) AND (LyltyCardNbr IS NOT NULL);
+kmt_year = FILTER KmtSlsPtd BY ((INT)DaysBetween(ToDate(CreateTs,'yyyy-MM-dd HH:mm:ss'), ToDate(TranDt,'yyyy-MM-dd')) <= 365) AND (LyltyCardNbr IS NOT NULL);
+
+float_SlsSrs_yr = FOREACH srs_year GENERATE (FLOAT) NetMerchSls,DivNbr,ItemNbr,LyltyCardNbr;
+joinSlsSrs_year = JOIN float_SlsSrs_yr BY (DivNbr,ItemNbr), srs_soar_bu BY (div_no,itm_no);
+groupSlsSrs_year = GROUP joinSlsSrs_year 	
+BY (srs_soar_bu::soar_no,srs_soar_bu::soar_nm,float_SlsSrs_yr::LyltyCardNbr);
+TotalSlsSrs_year = FOREACH groupSlsSrs_year GENERATE group,SUM(joinSlsSrs_year.float_SlsSrs_yr::NetMerchSls)as total_srs_sales;
+
+
+float_SlsKmt_yr = FOREACH kmt_year GENERATE (FLOAT)KmtSell-(FLOAT)MrkdnAmt  as NetMerchSls,KsnId,LyltyCardNbr;
+joinSlsKmt_year = JOIN float_SlsKmt_yr BY KsnId, Kmt_Soar_Bu BY KSN_ID;
+groupSlsKmt_year = GROUP joinSlsKmt_year 	
+BY (Kmt_Soar_Bu::SOAR_NO, Kmt_Soar_Bu::SOAR_NM,float_SlsKmt_yr::LyltyCardNbr);
+TotalSlsKmt_year = FOREACH groupSlsKmt_year GENERATE group, SUM(joinSlsKmt_year.float_SlsKmt_yr::NetMerchSls)as total_kmt_sales;
+
+
+--TOTAL SHC SALES
+
+joinshcsrs_sales = JOIN joinSlsSrs_year BY srs_soar_bu::soar_no, ShcSoarBu BY SrsSoarNbr;
+groupshcsrs = GROUP joinshcsrs_sales BY (joinSlsSrs_year::float_SlsSrs_yr::LyltyCardNbr, ShcSoarBu::SrsSoarNbr, joinSlsSrs_year::srs_soar_bu::soar_nm);
+
+joinshckmt_sales = JOIN joinSlsKmt_year BY Kmt_Soar_Bu::SOAR_NO, ShcSoarBu BY KmtSoarNbr;
+groupshckmt = GROUP joinshckmt_sales BY (joinSlsKmt_year::float_SlsKmt_yr::LyltyCardNbr, ShcSoarBu::KmtSoarNbr, joinSlsKmt_year::Kmt_Soar_Bu::SOAR_NM);
+
+foreachshcsrs_sales = FOREACH groupshcsrs GENERATE group,SUM(joinshcsrs_sales.joinSlsSrs_year::float_SlsSrs_yr::NetMerchSls) as sales;
+foreachshckmt_sales = FOREACH groupshckmt GENERATE group, SUM(joinshckmt_sales.joinSlsKmt_year::float_SlsKmt_yr::NetMerchSls) as sales;
+
+unionSHC_Sales = UNION foreachshcsrs_sales, foreachshckmt_sales;
+
+groupSHC_Sales = GROUP unionSHC_Sales BY group;
+TotalSHC_Sales = FOREACH groupSHC_Sales GENERATE group, SUM(unionSHC_Sales.$1)as total_shc_sales;
+
+--TRIP COUNT
+float_TripSrs_yr = FOREACH srs_year GENERATE  TranDt,DivNbr,ItemNbr,LyltyCardNbr;
+joinTripSrs_year = JOIN float_TripSrs_yr BY (DivNbr,ItemNbr), srs_soar_bu BY (div_no,itm_no);
+groupTripSrs_year = GROUP joinTripSrs_year 	
+BY (srs_soar_bu::soar_no,srs_soar_bu::soar_nm,float_TripSrs_yr::LyltyCardNbr);
+TotalTripSrs_year = FOREACH groupTripSrs_year  {
+a = DISTINCT joinTripSrs_year.float_TripSrs_yr::TranDt;
+GENERATE group, COUNT(a) as Srs_Trip_Count;};
+
+
+float_TripKmt_yr = FOREACH kmt_year GENERATE TranDt,KsnId,LyltyCardNbr;
+joinTripKmt_year = JOIN float_TripKmt_yr BY KsnId, Kmt_Soar_Bu BY KSN_ID;
+groupTripKmt_year = GROUP joinTripKmt_year 	
+BY (Kmt_Soar_Bu::SOAR_NO, Kmt_Soar_Bu::SOAR_NM,float_TripKmt_yr::LyltyCardNbr);
+TotalTripKmt_year = FOREACH groupTripKmt_year  {
+a = DISTINCT joinTripKmt_year.float_TripKmt_yr::TranDt;
+GENERATE group, COUNT(a) as Kmt_Trip_Count;};
+--TOTAL SHC TRIPCOUNT
+joinshcsrs_trip = JOIN joinTripSrs_year BY srs_soar_bu::soar_no, ShcSoarBu BY SrsSoarNbr;
+groupshcsrs_trip = GROUP joinshcsrs_trip BY (ShcSoarBu::ShcSoarNbr, ShcSoarBu::ShcSoarNm,joinTripSrs_year::float_TripSrs_yr::LyltyCardNbr);
+
+joinshckmt_trip = JOIN joinTripKmt_year BY Kmt_Soar_Bu::SOAR_NO, ShcSoarBu BY KmtSoarNbr;
+groupshckmt_trip = GROUP joinshckmt_trip BY (ShcSoarBu::ShcSoarNbr, ShcSoarBu::ShcSoarNm,joinTripKmt_year::float_TripKmt_yr::LyltyCardNbr);
+
+foreachshcsrs_trip = FOREACH groupshcsrs_trip GENERATE group,joinshcsrs_trip.joinTripSrs_year::float_TripSrs_yr::TranDt as tran_date;
+foreachshckmt_trip = FOREACH groupshckmt_trip GENERATE group, joinshckmt_trip.joinTripKmt_year::float_TripKmt_yr::TranDt as tran_date;
+
+unionSHC_Trip = UNION foreachshcsrs_trip, foreachshckmt_trip;
+
+groupSHC_Trip = GROUP unionSHC_Trip BY group;
+
+TotalSHC_TripCount = FOREACH groupSHC_Trip{
+b = DISTINCT unionSHC_Trip.tran_date;
+GENERATE group, COUNT(b)as Shc_Trip_Count;};
+-- final_attributes 
+final_attr_join = JOIN TotalSlsSrs_year BY group, TotalSlsKmt_year BY group, TotalSHC_Sales BY group,
+TotalTripSrs_year BY group,
+TotalTripKmt_year BY group,
+TotalSHC_TripCount BY group;
+final_attr = FOREACH final_attr_join GENERATE TotalSlsSrs_year::total_srs_sales, TotalSlsKmt_year::total_kmt_sales,TotalSHC_Sales::total_shc_sales,TotalTripSrs_year::Srs_Trip_Count,TotalTripKmt_year::Kmt_Trip_Count,TotalSHC_TripCount::Shc_Trip_Count;
+STORE final_attr into 'work/syw_member_repo/Telluride/salespoint' using PigStorage('\u0001');
+

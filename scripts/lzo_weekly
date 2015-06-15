@@ -1,0 +1,13 @@
+set output.compression.enabled  true;
+set output.compression.codec com.hadoop.compression.lzo.LzopCodec;
+
+set pig.maxCombinedSplitSize 2684354560;
+
+
+A = LOAD '/incoming/map/$SOURCE' using PigStorage('\u0001');
+STORE A into '/incoming/map/$SOURCE_lzo' using PigStorage('\u0001');
+
+
+
+
+sudo -u mapadmin hadoop jar /opt/cloudera/parcels/GPLEXTRAS/lib/hadoop/lib/hadoop-lzo-0.4.15-cdh5.1.2.jar com.hadoop.compression.lzo.DistributedLzoIndexer /incoming/map/$SOURCE_lzo

@@ -1,0 +1,17 @@
+CREATE EXTERNAL TABLE map_impala_poc.Pos_KillVert(
+LyltyCardNbr string,
+srs_soar_nm string,
+srs_div_desc string,
+srs_ln_desc string,
+srs_Killvert string,
+kmt_soar_nm string,
+kmt_div_desc string,
+kmt_ln_desc string,
+kmt_Killvert string,
+shc_soar_nm string,
+Trandt string
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '\u0001' LINES TERMINATED BY '\n'
+LOCATION '/smith/syw_member_repo/Telluride/POS_KillVert_final';
+

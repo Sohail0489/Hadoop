@@ -1,0 +1,15 @@
+CREATE EXTERNAL TABLE map_impala_poc.POS_Detailed_last(
+LyltyCardNbr string,
+soar_nm string,
+total_srs_sales string,
+total_srs_tripcount string,
+kmt_nm string,
+total_kmt_sales string,
+total_kmt_tripcount string,
+shc_nm string,
+total_shc_sales string,
+total_Shc_tripcount string)
+ROW FORMAT DELIMITED 
+FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n'
+LOCATION '/smith/syw_member_repo/Telluride/POS_Detailed';
+

@@ -1,0 +1,23 @@
+CREATE EXTERNAL TABLE Kmt_Soar_Bu_2(
+CreateTs STRING,
+SOAR_NO STRING
+        ,SOAR_NM STRING
+        ,FP_UNIT_NBR STRING
+        ,FP_UNIT_DESC STRING
+        ,FP_DVSN_NBR STRING
+        ,FP_DVSN_DESC STRING
+        ,FP_DEPT_NBR STRING
+        ,FP_DEPT_DESC STRING
+        ,FP_CATG_GRP_NBR STRING
+        ,FP_CATG_GRP_DESC STRING
+        ,CATG_NBR  STRING
+        ,CATG_DESC STRING
+        ,sub_catg_nbr STRING
+        ,sub_catg_desc  STRING
+        ,KSN_ID    STRING
+        ,KSN_DESC STRING
+        ,REPT_COST_AMT STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '\u0001' LINES TERMINATED BY '\n'
+LOCATION '/work/syw_member_repo/Telluride/rd_kmt_soar_bu';
+

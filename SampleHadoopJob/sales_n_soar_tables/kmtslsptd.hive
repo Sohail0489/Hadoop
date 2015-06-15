@@ -1,0 +1,22 @@
+create external table Kmtlsptd_oneyr(
+ cleants timestamp,
+custstringractnid  string,
+saleseqnbr  string,
+lyltycardnbr string,
+trandt                  string,
+locnnbr                string,
+ksnid                   string ,
+soarnbr                 string ,
+selltypecd              string,
+skuprctypecd            string,
+onlineordid             string,
+kmtsell                 string,
+mrkdnamt                string,
+slsqty                  string,
+merchcogs               string,
+mrgn                    string,
+burnamt                 string,
+mygoferorderind         string )
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '\u0001' LINES TERMINATED BY '\n'
+LOCATION '/work/syw_member_repo/Telluride/SywrKmtSlsPtdMstrCrm_oneyr_';

@@ -1,0 +1,11 @@
+CREATE EXTERNAL TABLE POS(
+LyltyCardNbr STRING,
+Srs_soar_nm STRING,
+Kmt_soar_nm STRING,
+Shc_soar_nm STRING,
+trandt string
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '\u0001' LINES TERMINATED BY '\n'
+LOCATION '/smith/syw_member_repo/Telluride/POS';
+

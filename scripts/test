@@ -1,0 +1,105 @@
+
+TABLE_NAME="$1"
+echo ${TABLE_NAME}
+arr=( CnsmrLyltySywrSrcCdi ConsumerCdi CnsmrHshldCdi CnsmrAddrCdi AddrCdi HshldCnsmrCdi HshldPremrPlusCdi HshldHighTechCdi HshldLfstlCdi HshldLftrtsCdi HshldMotrVhclCdi HshldNonBuyrOthrCdi HshldPrprtyCdi HshldPurchBhvrCdi GenderCdLu AgeLu HmOwnerRentrCdLu YrAtResCdLu EstIncmCdLu OccupntCntCdLu OperSysCdLu VehCntCdLu PropTypeCdLu LotSizeCdLu HmMrktValuDciCdLu HmEqtyAvailRngCdLu HmSqftgCdLu HmExteriorCdLu HmHeatSrcCdLu HomeRoofTypeCdLu RaceCdLu EduLvlCdLu OccupCdLu VotrPartyCdLu LifeEvntNewParCdLu SYWRMbrTel SYWRMbrClbTel SYWRMbrPntBalTel TwitterProfWebScrape LinkedInProfWebScrape SywCtlg SywIntractn RdKmtSoarBu SywMbr SywProdAttr RdSrsSoarBu SywTag SrsKillVert ShcSoarBu KillVertKmt KillVertSrs SywrPrimStr ShcLocn )
+if [[ ${TABLE_NAME} == Inferred ]]
+then
+echo ${TABLE_NAME}
+query_td () {
+	bteq << EOBTQ |grep '^>' |sed -e "s/^>//"
+	.LOGON tdadhoc.intra.searshc.com/smoham3,password
+	DATABASE ${MAP_SRC_VIEWS_DB};
+	SELECT '>'||count(A.LyltyCardNbr) FROM
+	(select * from L2_MAPSrcViews_S.ViSegMbrTyLyV3
+	QUALIFY ROW_NUMBER() OVER(PARTITION BY LyltyCardNbr ORDER BY MthNbr desc)=1
+	 where LyltyCardNbr>0 )A;
+	.LOGOFF;
+	.QUIT;
+EOBTQ
+	}
+	count_export=$(query_td)
+	echo $count_export
+	count_staging=$(hadoop fs -cat /warehouse/map_repo/incoming/inferred/Segments/20150325|wc -l )
+	echo $count_staging
+	if [ $count_export == $count_staging ]
+	then
+	echo match
+	else
+	echo "count dint match for inferred!"
+		exit 1
+	fi
+elif [[ ${TABLE_NAME} == SywrKmtSlsPtdMstrCrm || ${TABLE_NAME} == SywrSrsSlsMstrCrm ]]
+then
+echo ${TABLE_NAME}
+query_td () {
+	bteq << EOBTQ |grep '^>' |sed -e "s/^>//"
+	.LOGON tdadhoc.intra.searshc.com/smoham3,password
+	DATABASE ${MAP_SRC_VIEWS_DB};
+	SELECT '>'||count(*) FROM
+	${MAP_SRC_VIEWS_DB}.${TABLE_NAME}
+	 where TranDt between 'FROM_DATE' and 'TO_DATE';
+	.LOGOFF;
+	.QUIT;
+EOBTQ
+	}
+	count_export==$(query_td)
+	echo $count_export
+	count_staging==$(hadoop fs -cat ${MAP_INCOMING_DIR}/pos/${TABLE_NAME}/20150325| wc -l )
+	echo $count_staging
+	if [[ $count_export == $count_staging ]]
+	then
+	echo match
+	else
+	echo "count dint match for ${TABLE_NAME}!"
+		exit 1
+	fi
+elif [[ ${TABLE_NAME} == ShcTrendMbrCrm ]]
+then
+query_td () {
+	bteq << EOBTQ |grep '^>' |sed -e "s/^>//"
+	.LOGON tdadhoc.intra.searshc.com/smoham3,password
+	DATABASE ${MAP_SRC_VIEWS_DB};
+	SELECT '>'||count(*) FROM
+	${MAP_SRC_VIEWS_DB}.ShcTrendMbrCrm where MthYr = (select max(MthYr) from L2_MAPSrcViews_S.ShcTrendMbrCrm);
+	.LOGOFF;
+	.QUIT;
+EOBTQ
+	}
+	count_export=$(query_td)
+	echo $count_export
+	count_staging=$(hadoop fs -cat ${MADE_INCOMING_DIR}/pos/ShcTrendMbrCrm/20150325| wc -l )
+	echo $count_staging
+	if [ $count_export == $count_staging ]
+	then
+	echo match
+	else
+	echo "count dint match for ShcTrendMbrCrm!"
+		exit 1
+	fi
+
+elif [[ "${arr[*]}" == *"${TABLE_NAME}"* ]]
+then
+query_td () {
+	bteq << EOBTQ |grep '^>' |sed -e "s/^>//"
+	.LOGON tdadhoc.intra.searshc.com/smoham3,password
+	DATABASE ${MAP_SRC_VIEWS_DB};
+	sel '>'||count(*) from L2_MAPSrcViews_S.${TABLE_NAME};
+	.LOGOFF;
+	.QUIT;
+EOBTQ
+	}
+	count_export=$(query_td)
+	echo $count_export
+	count_staging=$(hadoop fs -cat ${MADE_INCOMING_DIR}/${SOURCE}/${TABLE_NAME}/${LOAD_DATE}| wc -l )
+	echo $count_staging
+	if [ $count_export == $count_staging ]
+	then
+	echo ${TABLE_NAME} matched
+	else
+	echo "count dint match for ${TABLE_NAME}!"
+		exit 1
+	fi
+else
+	echo ${TABLE_NAME} not found
+	exit 1
+fi

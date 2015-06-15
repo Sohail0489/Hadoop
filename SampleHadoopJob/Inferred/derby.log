@@ -1,0 +1,10 @@
+----------------------------------------------------------------
+2015-03-25 21:20:24.702 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.4.2.0 - (689064): instance a816c00e-014c-52ce-c34f-00000d6b2e60
+on database directory /home/auto/smoham3/SampleHadoopJob/Inferred/TempStatsStore  
+
+Database Class Loader started - derby.database.classpath=''
+
+2015-03-25 21:20:26.729 GMT:
+Shutting down instance a816c00e-014c-52ce-c34f-00000d6b2e60
+----------------------------------------------------------------

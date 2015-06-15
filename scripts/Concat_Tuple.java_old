@@ -1,0 +1,40 @@
+package org.sears.concat;
+import org.apache.pig.EvalFunc;
+import org.apache.pig.data.DataBag;
+import org.apache.pig.data.Tuple;
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+
+public class Concat_Tuple extends EvalFunc<String> {
+		
+public String exec(Tuple input) throws IOException, NullPointerException {
+
+  DataBag values = (DataBag)input.get(0);
+  String output="";
+  Set<String> temp = new HashSet<String>();
+  for (Iterator<Tuple> it = values.iterator(); it.hasNext();) 
+  		{
+		Tuple t = it.next();
+		String s=(String)t.get(0);
+			if(s.contains("~"))
+			{
+				String [] output_split= s.split("~");
+				temp.addAll(Arrays.asList(output_split));
+			}
+			else
+			temp.add(s);
+		
+  		}		
+				Iterator<String> iter = temp.iterator();
+				while (iter.hasNext()) {
+				    output+="~"+iter.next();
+				}
+				return output=output.substring(1);		
+	}
+		
+}

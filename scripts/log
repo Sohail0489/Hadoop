@@ -1,0 +1,43 @@
+BTEQ 14.10.00.03 Thu Apr  2 01:42:54 2015 PID: 8807
+ 
++---------+---------+---------+---------+---------+---------+---------+----
+.LOGON tdadhoc.intra.searshc.com/smoham3,
+
+ *** Logon successfully completed.
+ *** Teradata Database Release is 14.10.04.04                   
+ *** Teradata Database Version is 14.10.04.08                     
+ *** Transaction Semantics are BTET.
+ *** Session Character Set Name is 'ASCII'.
+ 
+ *** Total elapsed time was 1 second.
+ 
++---------+---------+---------+---------+---------+---------+---------+----
+DATABASE L2_MAPSrcViews_S;
+
+ *** New default database accepted. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+.set width 2000;
++---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+-
+.set titledashes off;
++---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+-
+SELECT '>'||count(A.LyltyCardNbr) FROM
+(select * from L2_MAPSrcViews_S.ViSegMbrTyLyV3
+QUALIFY ROW_NUMBER() OVER(PARTITION BY LyltyCardNbr ORDER BY MthNbr desc)=1
+ where LyltyCardNbr>0 )A;
+
+ *** Query completed. One row found. One column returned. 
+ *** Total elapsed time was 22 seconds.
+
+('>'||Count(LyltyCardNbr))
+>  140346466
+
++---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+-
+.LOGOFF;
+ *** You are now logged off from the DBC.
++---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+-
+.QUIT;
+ *** Exiting BTEQ...
+ *** RC (return code) = 0 

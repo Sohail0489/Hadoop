@@ -1,0 +1,16 @@
+CREATE EXTERNAL TABLE Srs_Soar_Bu_1(
+CreateTs STRING,
+  itm_no STRING
+      ,div_no STRING
+      ,div_nm STRING
+      ,soar_no STRING
+      ,soar_nm STRING
+      ,ln_no STRING
+      ,ln_ds STRING
+      ,sbl_no STRING
+      ,sbl_ds STRING
+      ,prd_ds STRING
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '\u0001' LINES TERMINATED BY '\n'
+LOCATION '/work/syw_member_repo/Telluride/rd_srs_soar_bu_1';

@@ -1,0 +1,39 @@
+
+.ROUTE MESSAGES WITH ECHO TO FILE "/staging/analytics/map/input/Telluride/L2_SelfServAnlysEngineDev_S.SywrSrsSlsPtdMstrCrm_3.log";
+
+.LOGTABLE L2_SelfServAnlysEngADev_T.WORK_TABLE;
+
+.RUN FILE       teradata.login;
+.BEGIN EXPORT SESSIONS 20;
+.EXPORT OUTFILE /staging/analytics/map/input/Telluride/L2_SelfServAnlysEngineDev_S.SywrSrsSlsPtdMstrCrm_3.out
+     FORMAT TEXT
+     MODE RECORD;
+
+SELECT 
+CustIntractnId (format '-(19)9') ( CHAR(30) ) ,'01'XB
+,TranLnNbr ( CHAR(30) ) ,'01'XB
+,LyltyCardNbr (format '-(19)9') ( CHAR(30) ) ,'01'XB
+,TranDt (format 'yyyy-mm-dd') ( CHAR(30) ) ,'01'XB
+,FacilIdNbr ( CHAR(7) ) ,'01'XB
+,FacilSbtCd ( CHAR(2) ) ,'01'XB
+,DivNbr (format '-(5)9') ( CHAR(30) ) ,'01'XB
+,ItemNbr (format '-(10)9') ( CHAR(30) ) ,'01'XB
+,SoarNbr (format '-(5)9') ( CHAR(30) ) ,'01'XB
+,LnItemTranTypeCd ( CHAR(1) ) ,'01'XB
+,CostPerUnit (format '--(15).9(4)') ( CHAR(30) ) ,'01'XB
+,ItemRegPrcAmt (format '--(11).9(2)') ( CHAR(30) ) ,'01'XB
+,PluAmtTypCd ( CHAR(30) ) ,'01'XB
+,GrsSls (format '--(11).9(2)') ( CHAR(30) ) ,'01'XB
+,MrkdnAmt (format '--(11).9(2)') ( CHAR(30) ) ,'01'XB
+,ProdQty ( CHAR(30) ) ,'01'XB
+,BurnAmt (format '--(11).9(2)') ( CHAR(30) ) ,'01'XB
+,MerchCogs (format '--(11).9(2)') ( CHAR(30) ) ,'01'XB
+,NetMerchSls (format '--(11).9(2)') ( CHAR(30) ) ,'01'XB
+,Mrgn (format '--(11).9(4)') ( CHAR(30) ) ,'01'XB
+,MscAcctNbr ( CHAR(6) ) ,'01'XB
+,OnlineOrdId ( CHAR(30) ) sample 10
+ FROM  L2_SelfServAnlysEngineDev_S.SywrSrsSlsPtdMstrCrm
+WHERE = AND =;
+
+.END EXPORT;
+.LOGOFF;

@@ -1,0 +1,199 @@
+nohup: ignoring input
+SCRIPT START - 06/05/2015 11:46:05 AM
+No of Arguments: 11
+Collection Name: sample-syw-profilegold-06-dv08
+Output Dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index
+Morphline File: /home/auto/smoham3/morphline/sample/iteration_05_dv08/gold.conf
+Schema File: /home/auto/smoham3/morphline/sample/iteration_05_dv08/schema.xml
+CREATING COLLECTION DIRECTORY
+mkdir: cannot create directory `/appl/solr/map/sample-syw-profilegold-06-dv08': File exists
+COPYING TEMPLATE COLLECTION FILES TO CURRENT COLLECTION DIRECTORY
+COPYING SCHEMA FILE TO COLLECTION DIRECTORY
+COPYING MORPHLINE FILE TO COLLECTION DIRECTORY
+BASE_CONFIG_DIR: /appl/solr/map/sample-syw-profilegold-06-dv08
+06/05/2015 11:46:05 AM STARTING INSTANCE DIR COMMAND
+Error: "sample-syw-profilegold-06-dv08" configuration already exists. Aborting. Try --update if you want to override
+06/05/2015 11:46:09 AM CREATING COLLECTION
+Error: A call to SolrCloud WEB APIs failed: HTTP/1.1 400 Bad Request
+Server: Apache-Coyote/1.1
+Content-Type: application/xml;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Fri, 05 Jun 2015 15:46:13 GMT
+Connection: close
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<response>
+
+<lst name="responseHeader">
+<int name="status">
+400</int>
+<int name="QTime">
+30</int>
+</lst>
+<str name="Operation createcollection caused exception:">
+org.apache.solr.common.SolrException:org.apache.solr.common.SolrException: collection already exists: sample-syw-profilegold-06-dv08</str>
+<lst name="exception">
+<str name="msg">
+collection already exists: sample-syw-profilegold-06-dv08</str>
+<int name="rspCode">
+400</int>
+</lst>
+<lst name="error">
+<str name="msg">
+collection already exists: sample-syw-profilegold-06-dv08</str>
+<int name="code">
+400</int>
+</lst>
+
+</response>
+0    [main] INFO  org.apache.solr.common.cloud.ConnectionManager  - Waiting for client to connect to ZooKeeper
+9    [main-EventThread] INFO  org.apache.solr.common.cloud.ConnectionManager  - Watcher org.apache.solr.common.cloud.ConnectionManager@79f4aeec name:ZooKeeperConnection Watcher:heahadn01:2181/solr got event WatchedEvent state:SyncConnected type:None path:null path:null type:None
+9    [main] INFO  org.apache.solr.common.cloud.ConnectionManager  - Client is connected to ZooKeeper
+24   [main] INFO  org.apache.solr.common.cloud.ZkStateReader  - Updating cluster state from ZooKeeper... 
+279  [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - Cluster reports 130 mapper slots
+486  [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - Cluster reports 26 reduce slots
+487  [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - Using these parameters: numFiles: 1, mappers: 1040, realMappers: 1, reducers: 55, shards: 11, fanout: 5, maxSegments: 1
+487  [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - Randomizing list of 1 input files to spread indexing load more evenly among mappers
+526  [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - Done. Randomizing list of 1 input files took 0.039 secs
+537  [main] INFO  org.apache.solr.common.cloud.ConnectionManager  - Waiting for client to connect to ZooKeeper
+539  [main-EventThread] INFO  org.apache.solr.common.cloud.ConnectionManager  - Watcher org.apache.solr.common.cloud.ConnectionManager@3799c784 name:ZooKeeperConnection Watcher:heahadn01:2181/solr got event WatchedEvent state:SyncConnected type:None path:null path:null type:None
+539  [main] INFO  org.apache.solr.common.cloud.ConnectionManager  - Client is connected to ZooKeeper
+540  [main] INFO  org.apache.solr.hadoop.ZooKeeperInspector  - Load collection config from:/collections/sample-syw-profilegold-06-dv08
+552  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/admin-extra.menu-top.html
+560  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/currency.xml
+561  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/protwords.txt
+562  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/mapping-FoldToASCII.txt
+563  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/synonyms-employment.txt
+564  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/solrconfig.xml
+565  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/stopwords.txt
+567  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/contractions_ga.txt
+567  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_hi.txt
+568  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_eu.txt
+568  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/userdict_ja.txt
+569  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/contractions_it.txt
+570  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_sv.txt
+570  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_es.txt
+571  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stoptags_ja.txt
+571  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stemdict_nl.txt
+572  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_bg.txt
+573  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_hy.txt
+573  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_el.txt
+574  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/hyphenations_ga.txt
+574  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_ar.txt
+575  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_fr.txt
+575  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_pt.txt
+576  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_nl.txt
+577  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_th.txt
+577  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_de.txt
+578  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_lv.txt
+578  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/contractions_ca.txt
+579  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_ru.txt
+579  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_ca.txt
+580  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_da.txt
+581  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_gl.txt
+581  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_no.txt
+582  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_fa.txt
+582  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_hu.txt
+583  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_tr.txt
+584  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_ro.txt
+584  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_id.txt
+585  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_cz.txt
+585  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_ja.txt
+586  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_fi.txt
+586  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_it.txt
+587  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/contractions_fr.txt
+588  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_ga.txt
+588  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/lang/stopwords_en.txt
+589  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/spellings.txt
+589  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/mapping-ISOLatin1Accent.txt
+590  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/admin-extra.html
+591  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/xslt/luke.xsl
+591  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/xslt/updateXml.xsl
+592  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/xslt/example_atom.xsl
+593  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/xslt/example_rss.xsl
+593  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/xslt/example.xsl
+594  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/scripts.conf
+594  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/synonyms.txt
+595  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/update-script.js
+596  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/join-doc.vm
+597  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/layout.vm
+597  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/clusterResults.vm
+598  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/debug.vm
+598  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/facet_queries.vm
+599  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/product-doc.vm
+599  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/main.css
+600  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/VM_global_library.vm
+601  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/hitGrouped.vm
+601  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/facets.vm
+602  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/head.vm
+602  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/querySpatial.vm
+603  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/cluster.vm
+603  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/jquery.autocomplete.js
+604  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/browse.vm
+604  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/facet_pivot.vm
+605  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/footer.vm
+606  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/did_you_mean.vm
+606  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/richtext-doc.vm
+607  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/jquery.autocomplete.css
+607  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/header.vm
+608  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/hit.vm
+608  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/suggest.vm
+609  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/query.vm
+609  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/facet_ranges.vm
+610  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/tabs.vm
+610  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/facet_fields.vm
+611  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/velocity/queryGroup.vm
+611  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/elevate.xml
+612  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/admin-extra.menu-bottom.html
+613  [main] INFO  org.apache.solr.cloud.ZkController  - Write file /tmp/1433519175503-0/schema.xml
+678  [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - Indexing 1 files using 1 real mappers into 55 reducers
+44026 [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - Done. Indexing 1 files using 1 real mappers into 55 reducers took 43.348 secs
+44079 [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - MTree merge iteration 1/1: Merging 55 shards into 11 shards using fanout 5
+69748 [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - MTree merge renaming solr shard: 1 from dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00000 to dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00001
+69752 [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - MTree merge renaming solr shard: 2 from dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00001 to dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00002
+69756 [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - MTree merge renaming solr shard: 3 from dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00002 to dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00003
+69760 [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - MTree merge renaming solr shard: 4 from dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00003 to dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00004
+69764 [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - MTree merge renaming solr shard: 5 from dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00004 to dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00005
+69767 [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - MTree merge renaming solr shard: 6 from dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00005 to dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00006
+69771 [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - MTree merge renaming solr shard: 7 from dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00006 to dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00007
+69774 [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - MTree merge renaming solr shard: 8 from dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00007 to dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00008
+69778 [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - MTree merge renaming solr shard: 9 from dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00008 to dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00009
+69781 [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - MTree merge renaming solr shard: 10 from dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00009 to dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00010
+69784 [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - MTree merge renaming solr shard: 0 from dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00010 to dir: hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/mtree-merge-output/part-m-00000
+69785 [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - MTree merge iteration 1/1: Done. Merging 55 shards into 11 shards using fanout 5 took 25.706 secs
+69803 [main] INFO  org.apache.solr.hadoop.GoLive  - Live merging of output shards into Solr cluster...
+69807 [pool-4-thread-5] INFO  org.apache.solr.hadoop.GoLive  - Live merge hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/results/part-00004 into http://heahu61-02.hadoop.searshc.com:8983/solr
+69809 [pool-4-thread-11] INFO  org.apache.solr.hadoop.GoLive  - Live merge hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/results/part-00010 into http://heahv61-08.hadoop.searshc.com:8983/solr
+69809 [pool-4-thread-9] INFO  org.apache.solr.hadoop.GoLive  - Live merge hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/results/part-00008 into http://heahu61-03.hadoop.searshc.com:8983/solr
+69807 [pool-4-thread-6] INFO  org.apache.solr.hadoop.GoLive  - Live merge hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/results/part-00005 into http://heahv61-06.hadoop.searshc.com:8983/solr
+69809 [pool-4-thread-10] INFO  org.apache.solr.hadoop.GoLive  - Live merge hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/results/part-00009 into http://heahada02.hadoop.searshc.com:8983/solr
+69807 [pool-4-thread-3] INFO  org.apache.solr.hadoop.GoLive  - Live merge hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/results/part-00002 into http://heahu61-01.hadoop.searshc.com:8983/solr
+69807 [pool-4-thread-1] INFO  org.apache.solr.hadoop.GoLive  - Live merge hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/results/part-00000 into http://heahv61-04.hadoop.searshc.com:8983/solr
+69808 [pool-4-thread-8] INFO  org.apache.solr.hadoop.GoLive  - Live merge hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/results/part-00007 into http://heahu61-04.hadoop.searshc.com:8983/solr
+69807 [pool-4-thread-4] INFO  org.apache.solr.hadoop.GoLive  - Live merge hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/results/part-00003 into http://heahu61-05.hadoop.searshc.com:8983/solr
+69807 [pool-4-thread-2] INFO  org.apache.solr.hadoop.GoLive  - Live merge hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/results/part-00001 into http://heahv61-05.hadoop.searshc.com:8983/solr
+69807 [pool-4-thread-7] INFO  org.apache.solr.hadoop.GoLive  - Live merge hdfs://heahadn01.hadoop.searshc.com:8020/warehouse/made/work/solr/sample_collection_12index/results/part-00006 into http://heahv61-02.hadoop.searshc.com:8983/solr
+69828 [pool-4-thread-6] INFO  org.apache.solr.client.solrj.impl.HttpClientUtil  - Creating new http client, config:maxConnections=128&maxConnectionsPerHost=32&followRedirects=false
+69828 [pool-4-thread-7] INFO  org.apache.solr.client.solrj.impl.HttpClientUtil  - Creating new http client, config:maxConnections=128&maxConnectionsPerHost=32&followRedirects=false
+69828 [pool-4-thread-11] INFO  org.apache.solr.client.solrj.impl.HttpClientUtil  - Creating new http client, config:maxConnections=128&maxConnectionsPerHost=32&followRedirects=false
+69828 [pool-4-thread-10] INFO  org.apache.solr.client.solrj.impl.HttpClientUtil  - Creating new http client, config:maxConnections=128&maxConnectionsPerHost=32&followRedirects=false
+69828 [pool-4-thread-8] INFO  org.apache.solr.client.solrj.impl.HttpClientUtil  - Creating new http client, config:maxConnections=128&maxConnectionsPerHost=32&followRedirects=false
+69828 [pool-4-thread-3] INFO  org.apache.solr.client.solrj.impl.HttpClientUtil  - Creating new http client, config:maxConnections=128&maxConnectionsPerHost=32&followRedirects=false
+69828 [pool-4-thread-9] INFO  org.apache.solr.client.solrj.impl.HttpClientUtil  - Creating new http client, config:maxConnections=128&maxConnectionsPerHost=32&followRedirects=false
+69828 [pool-4-thread-4] INFO  org.apache.solr.client.solrj.impl.HttpClientUtil  - Creating new http client, config:maxConnections=128&maxConnectionsPerHost=32&followRedirects=false
+69828 [pool-4-thread-5] INFO  org.apache.solr.client.solrj.impl.HttpClientUtil  - Creating new http client, config:maxConnections=128&maxConnectionsPerHost=32&followRedirects=false
+69828 [pool-4-thread-2] INFO  org.apache.solr.client.solrj.impl.HttpClientUtil  - Creating new http client, config:maxConnections=128&maxConnectionsPerHost=32&followRedirects=false
+69828 [pool-4-thread-1] INFO  org.apache.solr.client.solrj.impl.HttpClientUtil  - Creating new http client, config:maxConnections=128&maxConnectionsPerHost=32&followRedirects=false
+70130 [main] INFO  org.apache.solr.hadoop.GoLive  - Committing live merge...
+70131 [main] INFO  org.apache.solr.client.solrj.impl.HttpClientUtil  - Creating new http client, config:
+70137 [main] INFO  org.apache.solr.common.cloud.ConnectionManager  - Waiting for client to connect to ZooKeeper
+70140 [main-EventThread] INFO  org.apache.solr.common.cloud.ConnectionManager  - Watcher org.apache.solr.common.cloud.ConnectionManager@4073c6c9 name:ZooKeeperConnection Watcher:heahadn01:2181/solr got event WatchedEvent state:SyncConnected type:None path:null path:null type:None
+70140 [main] INFO  org.apache.solr.common.cloud.ConnectionManager  - Client is connected to ZooKeeper
+70141 [main] INFO  org.apache.solr.common.cloud.ZkStateReader  - Updating cluster state from ZooKeeper... 
+71349 [main] INFO  org.apache.solr.hadoop.GoLive  - Done committing live merge
+71349 [main] INFO  org.apache.solr.hadoop.GoLive  - Live merging of index shards into Solr cluster took 1.545 secs
+71350 [main] INFO  org.apache.solr.hadoop.GoLive  - Live merging completed successfully
+71350 [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - Succeeded with job: jobName: org.apache.solr.hadoop.MapReduceIndexerTool/TreeMergeMapper, jobId: job_1431524107318_18789
+71350 [main] INFO  org.apache.solr.hadoop.MapReduceIndexerTool  - Success. Done. Program took 71.396 secs. Goodbye.
+06/05/2015 11:47:26 AM RETURN CODE 0
