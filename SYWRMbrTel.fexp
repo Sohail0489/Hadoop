@@ -1,0 +1,100 @@
+.ROUTE MESSAGES WITH ECHO TO FILE "/staging/analytics/map/input/Telluride/L2_SelfServAnlysEngineDev_S.SYWRMbrTel1.log";
+
+.LOGTABLE L2_SelfServAnlysEngADev_T.WORK_TABLE;
+
+.RUN FILE       teradata.login;
+.BEGIN EXPORT SESSIONS 20;
+.EXPORT OUTFILE /staging/analytics/map/input/Telluride/L2_SelfServAnlysEngineDev_S.SYWRMbrTel1.out
+     FORMAT TEXT
+     MODE RECORD;
+
+
+SELECT
+LyltyCardNbr (format '-(19)9') ( CHAR(30) ) ,'01'XB
+,NmPrfx ( CHAR(10) ) ,'01'XB
+,FirstNm ( CHAR(30) ) ,'01'XB
+,MidNm ( CHAR(1) ) ,'01'XB
+,LastNm ( CHAR(30) ) ,'01'XB
+,NmSufx ( CHAR(4) ) ,'01'XB
+,Ln1Addr ( CHAR(40) ) ,'01'XB
+,Ln2Addr ( CHAR(40) ) ,'01'XB
+,CityNm ( CHAR(30) ) ,'01'XB
+,StCd ( CHAR(2) ) ,'01'XB
+,ZipCd ( CHAR(6) ) ,'01'XB
+,ZipCdPlus4 ( CHAR(4) ) ,'01'XB
+,CntryCd ( CHAR(5) ) ,'01'XB
+,LangPrefCd ( CHAR(1) ) ,'01'XB
+,PhoneNbr ( CHAR(10) ) ,'01'XB
+,SywrOptInStsCd ( CHAR(1) ) ,'01'XB
+,SywrDnpCd ( CHAR(1) ) ,'01'XB
+,EmailAddr ( CHAR(50) ) ,'01'XB
+,EmailChgDt (format 'yyyy-mm-dd') ( CHAR(10) ) ,'01'XB
+,EmailOptIn ( CHAR(1) ) ,'01'XB
+,EmailOptInDt (format 'yyyy-mm-ddbhh:mi:ss') ( CHAR(30) ) ,'01'XB
+,EmailValidRsnCd ( CHAR(1) ) ,'01'XB
+,EmailValidRsnDt (format 'yyyy-mm-ddbhh:mi:ss') ( CHAR(30) ) ,'01'XB
+,EmailCnfrmStatCd ( CHAR(1) ) ,'01'XB
+,EmailCnfrmDt (format 'yyyy-mm-ddbhh:mi:ss') ( CHAR(30) ) ,'01'XB
+,BirthDt (format 'yyyy-mm-dd') ( CHAR(10) ) ,'01'XB
+,EnrolRgstrDt (format 'yyyy-mm-ddbhh:mi:ss') ( CHAR(30) ) ,'01'XB
+,EnrolSrcCd ( CHAR(25) ) ,'01'XB
+,EnrolStrNbr ( CHAR(5) ) ,'01'XB
+,EnrolRegNbr ( CHAR(3) ) ,'01'XB
+,EnrolAssocId ( CHAR(12) ) ,'01'XB
+,SywrCardType ( CHAR(4) ) ,'01'XB
+,LyltyMbrStatCd ( CHAR(1) ) ,'01'XB
+,LyltyMbrStatChgDt (format 'yyyy-mm-dd') ( CHAR(10) ) ,'01'XB
+,AssocCd ( CHAR(1) ) ,'01'XB
+,MobilPhoneNbr ( CHAR(10) ) ,'01'XB
+,MobilPhoneChgDt (format 'yyyy-mm-dd') ( CHAR(10) ) ,'01'XB
+,MobilTxtOptCd ( CHAR(1) ) ,'01'XB
+,MobilOptInDt (format 'yyyy-mm-ddbhh:mi:ss') ( CHAR(30) ) ,'01'XB
+,MobilValidInd ( CHAR(1) ) ,'01'XB
+,MobilValidDt (format 'yyyy-mm-ddbhh:mi:ss') ( CHAR(30) ) ,'01'XB
+,VipStat ( CHAR(20) ) ,'01'XB
+,VipStatDt (format 'yyyy-mm-dd') ( CHAR(10) ) ,'01'XB
+,SywrNewLyltyIdNbr (format '-(19)9') ( CHAR(30) ) ,'01'XB
+,AddrChgDt (format 'yyyy-mm-dd') ( CHAR(10) ) ,'01'XB
+,PhoneChgDt (format 'yyyy-mm-dd') ( CHAR(10) ) ,'01'XB
+,NmChgDt (format 'yyyy-mm-dd') ( CHAR(10) ) ,'01'XB
+,SywrMbrProfIncmplInd ( CHAR(1) ) ,'01'XB
+,SywrMbrEarnType ( CHAR(5) ) ,'01'XB
+,SywrMbrEarnTypeDt (format 'yyyy-mm-ddbhh:mi:ss') ( CHAR(30) ) ,'01'XB
+,SywrTestCdInd ( CHAR(1) ) ,'01'XB
+,CreatId (format '-(19)9') ( CHAR(50) ) ,'01'XB
+,RowCrtTs (format 'yyyy-mm-ddbhh:mi:ss') ( CHAR(30) ) ,'01'XB
+,RowModTs (format 'yyyy-mm-ddbhh:mi:ss') ( CHAR(30) ) ,'01'XB
+,TcRqstId ( CHAR(4) ) ,'01'XB
+,TcStrNbr ( CHAR(5) ) ,'01'XB
+,TcAccptDt (format 'yyyy-mm-ddbhh:mi:ss') ( CHAR(30) ) ,'01'XB
+,MbrId ( CHAR(36) ) ,'01'XB
+,CustId ( CHAR(36) ) ,'01'XB
+,RefClubCd ( CHAR(6) ) ,'01'XB
+,MbrPassCd ( CHAR(40) ) ,'01'XB
+,EnrolOfrCd ( CHAR(10) ) ,'01'XB
+,FinlLylIdNo (format '-(19)9') ( CHAR(30) ) ,'01'XB
+,OnlineValidDt (format 'yyyy-mm-ddbhh:mi:ss') ( CHAR(30) ) ,'01'XB
+,OnlineValidInd ( CHAR(1) ) ,'01'XB
+,AddlNm ( CHAR(30) ) ,'01'XB
+,SYWRDceas ( CHAR(1) ) ,'01'XB
+,GenderCd ( CHAR(1) ) ,'01'XB
+,LstUpdSrcCd ( CHAR(4) ) ,'01'XB
+,LstUpdStrNbr ( CHAR(5) ) ,'01'XB
+,LstUpdRegNbr ( CHAR(3) ) ,'01'XB
+,LstUpdDt (format 'yyyy-mm-ddbhh:mi:ss') ( CHAR(30) ) ,'01'XB
+,LstUpdByAssocId ( CHAR(12) ) ,'01'XB
+,MgrtnStat ( CHAR(1) ) ,'01'XB
+,PhoneEnrolRgstrNbr ( CHAR(3) ) ,'01'XB
+,PhoneEnrolAssocId ( CHAR(45) ) ,'01'XB
+,MostRcntStrType ( CHAR(4) ) ,'01'XB
+,MostRcntStrNbr ( CHAR(5) ) ,'01'XB
+,SrcSysInd ( CHAR(1) ) 
+FROM
+L2_MAPSrcViews_S.SYWRMbrTel;
+
+
+
+.END EXPORT;
+.LOGOFF;
+
+
