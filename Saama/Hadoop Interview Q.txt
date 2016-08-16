@@ -1,0 +1,49 @@
+﻿==================================================================================================
+nameNode=hdfs://localhost:8020
+jobTracker=localhost:8021
+queueName=default
+oozie.wf.application.path=hdfs://localhost:8020/user/cloudera/app/oozie
+oozie.wf.use.system.libpath=true
+oozie.libpath=hdfs://localhost:8020/user/cloudera/share/lib
+
+
+
++-~/spark-example/
+  +-job.properties
+  +-workflow.xml
+  +-lib/
+    +-example-1.0.jar 
+    
+===============================================================================================
+ORDER BY x: guarantees global ordering, but does this by pushing all data through just one reducer. This is basically unacceptable for large datasets. You end up one sorted file as output.
+SORT BY x: orders data at each of N reducers, but each reducer can receive overlapping ranges of data. You end up with N or more sorted files with overlapping ranges.
+DISTRIBUTE BY x: ensures each of N reducers gets non-overlapping ranges of x, but doesn't sort the output of each reducer. You end up with N or unsorted files with non-overlapping ranges.
+CLUSTER BY x: ensures each of N reducers gets non-overlapping ranges, then sorts by those ranges at the reducers. This gives you global ordering, and is the same as doing (DISTRIBUTE BY x and SORT BY x). You end up with N or more sorted files with non-overlapping ranges.
+===============================================================================================
+ SET hive.auto.convert.join=true;----- does map side join, no needto give hint
+ SET hive.mapjoin.smalltable.filesize=1000000000;  (1GB)
+sort.io.mb=xx  once it reaches that size in suffle phase mapreduce starts spilling to disk
+
+    Sort-Merge-Bucket (SMB) joins can be converted to SMB map joins as well.SMB joins are used wherever the tables are sorted and bucketed.
+
+        SET hive.auto.convert.sortmerge.join=true;
+        SET hive.optimize.bucketmapjoin = true;
+        SET hive.optimize.bucketmapjoin.sortedmerge = true;
+        SET hive.auto.convert.sortmerge.join.noconditionaltask=true;
+===============================
+Enable Vectorization
+Vectorization is a parallel processing technique in which an operation is applied to multiple rows of data rather than a single row. 
+In Hive, vectorization works with a column of data (the vector) and applies a single operation to the entire column. 
+Having access to data in columnar format is crucial for vectorization, so it only works with ORC formatted tables.
+
+Vectorization is not enabled by default but you can turn it on with the command:
+
+set hive.vectorized.execution.enabled=true;​
+
+=================================
+Parallel execution
+          Applies to MapReduce jobs that can run in parallel, for example jobs processing different source tables before a join. 
+
+         SET hive.exec.parallel=true;
+		 
+========================================================================

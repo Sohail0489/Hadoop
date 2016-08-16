@@ -1,0 +1,28 @@
+import scala.io.Source
+val BreastCancerFile = Source.fromFile("/home/admin/BMS_DataSets/Breast_cancer_table.txt").getLines().drop(1).map(_.split("\t")).toList
+
+BreastCancerFile.foreach(i=>println(i(1)))
+BreastCancerFile.foreach(i=>for ( a <- i ) {println(a(1))})
+for(arr<-BreastCancerFile ) arr(0).substring(0,7)
+
+import Array._
+ 
+object Student {
+   def main(args: Array[String]) {
+      var id = range(7, 23, 3)
+      var age = range(15,20)
+      for ( s <- id ) {
+         print( " " + s)
+      }
+      println()
+      for ( a <- age ) {
+         print( " " + a )
+      }
+   }
+}
+
+
+
+
+
+val iter = src.getLines().drop(1).map(_.split(":"))

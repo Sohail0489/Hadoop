@@ -1,0 +1,204 @@
+Identifier	Age at Diagnosis	Gender	Race	Ethnicity	Diagnosis	Previous Treatment?	Prior MGUS?	Cause of Death	FISH_Translocation	Heavy Chain; Ig	Light Chain	1_if_hyperdiploid
+265	63	Male	Caucasian	NA	MGUS	N	NA	NA	t(11;14)	NA	NA	0
+266	NA	Female	Caucasian	Not Hispanic or Latino	MGUS	N	NA	NA	t(11;14)	G	Kappa	1
+267	58	Male	Caucasian	Not Hispanic or Latino	MGUS	N	Y	NA	NA	NA	Kappa	1
+268	36	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	G	Kappa	1
+269	44	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	t(4;14)	G	Lambda	0
+270	67	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	Progression of disease	NA	G	Kappa	1
+271	56	Female	African American	Not Hispanic or Latino	Multiple Myeloma	Y	N	Progression of disease	NA	G	Lambda	1
+272	59	Male	Caucasian	NA	Multiple Myeloma	N	N	NA	NA	G	Kappa	1
+273	59	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	NA	Kappa	1
+274	71	Male	Hispanic	Hispanic or Latino	Multiple Myeloma	Y	N	NA	NA	G	Lambda	0
+275	56	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	G	Kappa	1
+276	58	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	NA	G	Kappa	1
+277	59	Female	African American	Not Hispanic or Latino	Multiple Myeloma	Y	N	Progression of disease	NA	G	Kappa	1
+278	60	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	Progression of disease	NA	NA	Kappa	1
+279	41	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	t(11;14)	G	Kappa	0
+280	50	Female	Caucasian	NA	Multiple Myeloma	N	NA	Progression of disease	t(14;16)	A	Kappa	0
+281	62	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	NA	A	Kappa	0
+282	55	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	t(4;14)	G	Lambda	0
+283	61	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	A	Lambda	0
+284	69	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	G	Lambda	1
+285	24	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	NA	G	Lambda	0
+286	55	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	NA	NA	NA	t(4;14)	NA	Kappa	1
+287	69	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	t(11;14)	G	Kappa	1
+288	37	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	Progression of disease	NA	G	Kappa	1
+289	66	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	t(4;14)	G	Lambda	1
+290	56	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	Progression of disease	t(11;14)	A	Kappa	0
+291	66	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	NA	N	NA	NA	G	NA	1
+292	63	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	t(11;14)	G	Kappa	0
+293	62	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	NA	Other	t(11;14)	NA	Kappa	0
+294	69	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	Other	NA	G	NA	1
+295	58	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	Other	t(11;14)	G	Lambda	0
+296	52	Male	Hispanic	Hispanic or Latino	Multiple Myeloma	N	N	NA	t(11;14)	NA	Kappa	1
+297	63	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	NA	NA	t(11;14)	G	Kappa	0
+298	55	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	Progression of disease	t(11;14)	G	Kappa	1
+299	59	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	Other	NA	G	Lambda	0
+300	72	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	Progression of disease	t(11;14)	A	Kappa	0
+301	56	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	t(4;14)	A	Kappa	0
+302	72	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	Progression of disease	NA	G	Kappa	1
+303	69	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	Progression of disease	t(11;14)	G	Kappa	0
+304	60	Female	Caucasian	NA	Multiple Myeloma	N	N	NA	NA	G	Kappa	1
+305	37	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	NA	NA	Kappa	1
+306	71	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	Progression of disease	t(11;14)	G	Lambda	0
+307	59	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	NA	G	Lambda	1
+308	59	Female	Caucasian	NA	Multiple Myeloma	N	N	NA	NA	A	Kappa	1
+309	58	Male	Caucasian	NA	Multiple Myeloma	N	N	NA	NA	A	Lambda	1
+310	NA	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	NA	NA	t(11;14)	A	Lambda	0
+311	49	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	Y	Progression of disease	NA	G	Kappa	1
+312	45	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	Progression of disease	t(4;14)	A	NA	0
+313	NA	Male	African American	NA	Multiple Myeloma	Y	N	NA	t(11;14)	A	Kappa	0
+314	NA	Male	Caucasian	NA	Multiple Myeloma	Y	NA	NA	NA	G	Kappa	1
+315	65	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	G	Kappa	1
+316	66	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	NA	ND	Lambda	0
+317	65	Female	Hispanic	Hispanic or Latino	Multiple Myeloma	N	N	NA	t(4;14)	G	Kappa	1
+318	51	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	G	Kappa	1
+319	54	Female	Caucasian	NA	Multiple Myeloma	N	N	NA	NA	A	Lambda	1
+320	71	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	Y	NA	NA	G	Lambda	1
+321	53	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	Progression of disease	t(11;14)	M	Kappa	0
+322	NA	Male	African American	NA	Multiple Myeloma	Y	N	NA	NA	NA	Kappa	1
+323	70	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	NA	G	Kappa	1
+324	NA	Male	Asian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	NA	NA	NA	0
+325	NA	Female	Caucasian	NA	Multiple Myeloma	Y	N	NA	NA	NA	NA	0
+326	NA	Female	African American	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	G	Lambda	1
+327	67	Male	Caucasian	NA	Multiple Myeloma	N	N	NA	t(11;14)	G	Kappa	0
+328	NA	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	NA	NA	NA	NA	G	Kappa	1
+329	27	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	Y	NA	NA	G	Kappa	1
+330	NA	NA	NA	NA	Multiple Myeloma	Y	N	NA	NA	ND	Lambda	0
+331	50	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	Y	NA	NA	A	Kappa	1
+332	57	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	G	Kappa	1
+333	59	Male	Caucasian	NA	Multiple Myeloma	N	N	NA	NA	G	Lambda	1
+334	NA	Female	NA	NA	Multiple Myeloma	N	NA	NA	NA	NA	NA	0
+335	69	Female	NA	NA	Multiple Myeloma	Y	N	NA	NA	G	Kappa	0
+336	NA	Male	NA	NA	Multiple Myeloma	Y	N	NA	NA	A	Lambda	1
+337	NA	Female	Caucasian	NA	Multiple Myeloma	N	N	NA	NA	A	Lambda	1
+338	NA	Male	African American	Not Hispanic or Latino	Multiple Myeloma	NA	NA	NA	NA	G	Kappa	1
+339	65	NA	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	NA	ND	Lambda	0
+340	69	NA	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	A	Kappa	0
+341	80	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	t(4;14)	A	Kappa	0
+342	NA	Female	Hispanic	Hispanic or Latino	Multiple Myeloma	Y	N	NA	NA	NA	NA	0
+343	NA	NA	Hispanic	Hispanic or Latino	Multiple Myeloma	Y	N	NA	NA	NA	NA	0
+344	NA	Male	Caucasian	NA	Multiple Myeloma	Y	N	NA	NA	NA	NA	1
+345	NA	Male	Asian	NA	Multiple Myeloma	Y	N	NA	NA	NA	NA	1
+346	68	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	ND	Kappa	0
+347	78	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	Progression of disease	NA	G	Kappa	1
+348	NA	Female	Caucasian	NA	Multiple Myeloma	Y	N	NA	NA	NA	NA	1
+349	47	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	Progression of disease	NA	ND	NA	0
+350	NA	Male	Caucasian	NA	Multiple Myeloma	Y	N	NA	NA	NA	NA	1
+351	NA	Female	Hispanic	Hispanic or Latino	Multiple Myeloma	Y	N	NA	NA	NA	NA	1
+352	55	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	Progression of disease	NA	G	Kappa	1
+353	65	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	NA	NA	t(11;14)	G	NA	0
+354	54	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	NA	Kappa	0
+355	62	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	t(11;14)	G	Kappa	0
+356	69	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	G	NA	1
+357	70	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	NA	Progression of disease	NA	NA	NA	1
+358	57	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	NA	NA	NA	A	Lambda	0
+359	NA	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	G	Kappa	1
+360	62	Female	Hispanic	Hispanic or Latino	Multiple Myeloma	N	N	Progression of disease	NA	G	Lambda	1
+361	45	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	Progression of disease	NA	ND	Kappa	0
+362	75	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	Y	NA	NA	G	Lambda	1
+363	69	Male	NA	NA	Multiple Myeloma	N	N	NA	NA	G	Lambda	1
+364	42	Female	Caucasian	NA	Multiple Myeloma	Y	N	Progression of disease	NA	G	Lambda	0
+365	53	Female	Caucasian	NA	Multiple Myeloma	Y	N	NA	NA	G	Kappa	1
+366	NA	Female	Caucasian	NA	Multiple Myeloma	Y	N	NA	NA	NA	NA	1
+367	NA	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	NA	N	NA	NA	G	Biphenotypic	1
+368	57	Female	Caucasian	NA	Multiple Myeloma	Y	Y	NA	NA	NA	NA	0
+369	33	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	Y	NA	NA	NA	Kappa	1
+370	61	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	Y	NA	NA	NA	Kappa	0
+371	49	Male	Hispanic	Hispanic or Latino	Multiple Myeloma	Y	Y	NA	NA	G	Kappa	1
+372	67	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	Y	NA	NA	NA	Lambda	0
+373	75	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	Progression of disease	NA	A	Kappa	1
+374	56	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	Y	Progression of disease	t(11;14)	NA	Lambda	1
+375	73	Female	Asian	NA	Multiple Myeloma	N	N	Progression of disease	t(4;14)	G	Kappa	0
+376	61	Female	Caucasian	NA	Multiple Myeloma	N	N	NA	NA	G	Lambda	0
+377	75	Male	Caucasian	NA	Multiple Myeloma	N	N	Other	NA	A	Kappa	0
+378	63	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	t(11;14)	G	ND	0
+379	70	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	G	Kappa	0
+380	78	Male	Caucasian	NA	Multiple Myeloma	Y	N	NA	NA	G	ND	1
+381	57	Male	NA	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	A	Lambda	1
+382	46	Male	Caucasian	NA	Multiple Myeloma	N	N	NA	NA	G	Lambda	1
+383	76	Female	Caucasian	NA	Multiple Myeloma	Y	N	Progression of disease	NA	G	Lambda	1
+384	74	Male	Caucasian	NA	Multiple Myeloma	N	N	NA	NA	G	Kappa	1
+385	NA	Male	African American	NA	Multiple Myeloma	N	N	Other	t(14;16)	A	Lambda	1
+386	43	Male	African American	Not Hispanic or Latino	Multiple Myeloma	N	N	Progression of disease	NA	G	Kappa	1
+387	58	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	NA	NA	Kappa	1
+388	74	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	NA	NA	NA	NA	NA	0
+389	72	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	NA	NA	NA	NA	NA	0
+390	56	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	NA	NA	NA	NA	NA	1
+391	52	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	NA	NA	NA	NA	NA	NA	0
+392	68	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	Y	NA	NA	NA	NA	1
+393	48	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	NA	NA	1
+394	65	Male	Asian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	A	Kappa	1
+395	65	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	Y	NA	NA	G	Kappa	1
+396	55	Male	African American	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	NA	A	Lambda	1
+397	NA	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	NA	NA	NA	G	Kappa	1
+398	71	Male	Hispanic	Hispanic or Latino	Multiple Myeloma	N	N	NA	t(4;14)	ND	Lambda	0
+399	60	Male	African American	NA	Multiple Myeloma	N	N	NA	NA	NA	NA	0
+400	67	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	NA	NA	0
+401	76	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	NA	NA	1
+402	65	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	NA	NA	1
+403	44	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	Y	NA	NA	NA	NA	1
+404	36	Female	Caucasian	NA	Multiple Myeloma	Y	Y	NA	NA	G	Lambda	0
+405	NA	Male	Caucasian	NA	Multiple Myeloma	N	N	NA	(-17p13)	G	Kappa	1
+406	72	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	A	Kappa	1
+407	NA	Male	Caucasian	NA	Multiple Myeloma	N	N	NA	NA	G	Kappa	1
+408	35	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	t(11;14)	G	Lambda	0
+409	58	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	t(11;14)	G	Kappa	1
+410	56	Male	African American	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	ND	Kappa	1
+411	48	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	G	Kappa	1
+412	76	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	A	Lambda	1
+413	63	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	t(4;14)	G	Kappa	0
+414	63	NA	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	NA	NA	NA	1
+415	73	Female	NA	NA	Multiple Myeloma	Y	NA	NA	NA	G	Lambda	1
+416	76	Male	Caucasian	NA	Multiple Myeloma	Y	N	NA	NA	NA	ND	0
+417	68	Male	Caucasian	NA	Multiple Myeloma	Y	N	NA	NA	NA	NA	0
+418	NA	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	NA	NA	NA	NA	NA	NA	0
+419	63	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	t(11;14)	NA	Kappa	0
+420	52	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	t(11;14)	G	Kappa	1
+421	56	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	t(4;14)	G	Kappa	0
+422	72	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	Y	NA	t(11;14)	G	NA	0
+423	68	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	t(11;14)	NA	NA	0
+424	64	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	t(11;14)	G	Lambda	1
+425	52	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	t(11;14)	G	Kappa	1
+426	63	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	Y	NA	NA	G	Kappa	0
+427	81	Male	Caucasian	NA	Multiple Myeloma	Y	N	NA	NA	G	NA	1
+428	61	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	G	Kappa	1
+429	57	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	Progression of disease	NA	G	Kappa	1
+430	61	Male	Hispanic	Hispanic or Latino	Multiple Myeloma	Y	Y	Progression of disease	NA	G	Lambda	1
+431	66	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	NA	NA	Kappa	1
+432	76	Male	Caucasian	NA	Multiple Myeloma	N	N	NA	NA	NA	NA	0
+433	NA	Female	Caucasian	NA	Multiple Myeloma	NA	NA	NA	t(4;14)	NA	Kappa	0
+434	49	Male	NA	NA	Multiple Myeloma	Y	N	NA	NA	NA	NA	0
+435	56	Female	Caucasian	NA	Multiple Myeloma	Y	Y	Progression of disease	NA	G	Lambda	0
+436	69	Male	Caucasian	NA	Multiple Myeloma	Y	N	Progression of disease	t(11;14)	A	Kappa	0
+437	NA	Male	Caucasian	NA	Multiple Myeloma	N	NA	NA	NA	NA	NA	NA
+438	61	Male	Caucasian	NA	Multiple Myeloma	Y	N	NA	t(11;14)	G	Lambda	0
+439	75	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	t(11;14)	G	Kappa	1
+440	65	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	Y	NA	NA	G	Lambda	0
+441	52	Female	Caucasian	NA	Multiple Myeloma	Y	Y	NA	NA	A	Kappa	0
+442	58	Male	Caucasian	NA	Multiple Myeloma	Y	N	NA	NA	A	Kappa	1
+443	64	Male	Caucasian	NA	Multiple Myeloma	Y	NA	NA	NA	NA	NA	1
+444	80	Male	Caucasian	NA	Multiple Myeloma	Y	N	NA	NA	G	NA	1
+445	47	Female	Caucasian	NA	Multiple Myeloma	Y	N	NA	NA	G	Kappa	1
+446	41	Male	Caucasian	NA	Multiple Myeloma	Y	Y	Progression of disease	NA	G	Kappa	0
+447	NA	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	NA	Progression of disease	NA	NA	NA	1
+448	64	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	NA	NA	NA	1
+449	76	Male	NA	NA	Multiple Myeloma	N	N	NA	NA	NA	NA	1
+450	61	Male	Caucasian	NA	Multiple Myeloma	Y	Y	NA	NA	NA	NA	0
+451	60	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	NA	NA	1
+452	NA	Male	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	NA	NA	NA	NA	NA	0
+453	70	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	Y	NA	t(11;14)	A	Kappa	1
+454	59	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	N	NA	NA	NA	NA	NA	0
+455	62	Female	African American	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	NA	NA	1
+456	NA	Male	African American	Not Hispanic or Latino	Multiple Myeloma	N	N	NA	NA	NA	NA	1
+457	NA	Female	Caucasian	Not Hispanic or Latino	Multiple Myeloma	Y	NA	NA	NA	NA	NA	0
+458	53	Female	African American	Not Hispanic or Latino	Multiple Myeloma	Y	NA	NA	NA	NA	NA	1
+459	NA	Male	African American	Not Hispanic or Latino	Multiple Myeloma	Y	N	NA	NA	A	Lambda	0
+460	NA	Male	Caucasian	Not Hispanic or Latino	NA	Y	NA	Progression of disease	NA	NA	NA	0
+461	NA	Male	NA	NA	NA	N	NA	NA	NA	G	Kappa	1
+462	NA	Male	NA	NA	NA	NA	NA	NA	NA	NA	NA	1
+463	NA	Male	NA	NA	NA	N	NA	NA	NA	NA	NA	1
+464	82	NA	Caucasian	NA	Non-Myeloma diseases	N	NA	NA	NA	NA	NA	0
+465	50	Male	Caucasian	Not Hispanic or Latino	Smoldering Myeloma	N	N	NA	NA	NA	NA	0
+466	66	Female	NA	NA	Smoldering Myeloma	N	NA	Progression of disease	NA	NA	Lambda	0
+467	NA	Male	Caucasian	NA	Smoldering Myeloma	N	NA	NA	NA	NA	NA	1

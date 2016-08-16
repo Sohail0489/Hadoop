@@ -1,0 +1,99 @@
+/opt/solr-5.5.2/server/solr/configsets/data_driven_schema_configs_sohail_hdfs/conf
+
+//SU-VM-066.anant.saama.com/user/solr
+
+/opt/solr-5.5.2/bin  solr strat and stop si here
+./solr  start -cloud -p 8983 -z SU-VM-066.anant.saama.com:2181 -s ~/solr-cores/core1
+./solr  start -cloud -p 8983 -z hdfs://10:20:202:101:8020 -s ~/solr-cores/core1
+
+ scp root@10.20.202.95:/opt/solr-5.5.2/example/exampledocs/sd500.xml .   (copy command between servers)
+=========================================
+./solr stop -all
+./solr start -e cloud -z su-vm-067.anant.saama.com:2181,su-vm-068.anant.saama.com:2181,su-vm-069.anant.saama.com:2181 -noprompt
+
+===============
+dihupdate
+http://10.20.202.95:8983/solr/core_12_sol/dihupdate?command=full-import
+
+hive> create table xmltable(xmldata string) STORED as TEXTFILE;
+hive> load data inpath '/user/map-test/test-data/test.xml' into table xmltable;
+hive> create view xmlview(id,name,manu) as select xpath(xmldata, 'add/doc/field[@name="id"]/text()'),xpath(xmldata, 'add/doc/field[@name="name"]/text()'),xpath(xmldata, 'add/doc/field[@name="manu"]
+
+===============
+yarn jar solr-hadoop-job-2.2.4.jar com.lucidworks.hadoop.ingest.IngestJob -DcsvFieldMapping=0=Id,1=Name -DcsvDelimiter="," -DidField=Id -Dlww.commit.on.close=true -cls com.lucidworks.hadoop.ingest.CSVIngestMapper -c core_11_sol -i /user/map-test/test-data/sohail_test.csv -of com.lucidworks.hadoop.io.LWMapRedOutputFormat -s http://10.20.202.95:8983/solr -ur 1
+ 
+yarn jar solr-hadoop-job-2.2.4.jar com.lucidworks.hadoop.ingest.IngestJob -DidField=id -Dlww.commit.on.close=true -cls com.lucidworks.hadoop.ingest.SolrXMLIngestMapper  -c core_12_sol -i /user/map-test/test-data/test.xml -of com.lucidworks.hadoop.io.LWMapRedOutputFormat -s http://10.20.202.95:8983/solr -ur 1
+
+
+/user/map-test/data/text/07212016_165257/07052016_151245/test
+
+java -DzkHost -jar start.jar
+java -DzkHost=zkhost:9983 -jar start.jar
+
+CSVIngestMapper
+DirectoryIngestMapper for pdf
+
+./bin/solr delete -c <collection-name/core-name>
+
+./bin/solr create -c core_10_sol -d ./server/solr/configsets/data_driven_schema_configs_hdfs_solxml/conf -n core_10_sol -s 1 -rf 1
+
+
+./bin/post -c myhdfscore18 /opt/solr-5.5.2/example/exampledocs/Axtria.xlsx
+
+requestHandler
+
+curl http://10.20.202.95:8983/solr/myhdfscore13/update/csv --data-binary @books.csv -H 'Content-type:text/plain; charset=utf-8'
+
+
+===========================================================================
+Steps to start solr on datanodes:
+
+run this on 
+DN01(67)
+./bin/solr start -cloud -s ./server/solr/node1/solr  -p 8983 -z 10.20.202.100:2181 -m 2g
+
+DN02(68)
+./bin/solr start -cloud -s ./server/solr/node2/solr  -p 8983 -z 10.20.202.100:2181 -m 2g
+
+Dn03(69)
+./bin/solr start -cloud -s ./server/solr/node3/solr  -p 8983 -z 10.20.202.100:2181 -m 2g
+
+
+While creating core will give 3 shards that way we have solr on all the three datanodes(-s3)
+./bin/solr create -c core_cloud_2 -d ./server/solr/configsets/data_driven_schema_configs_hdfs_hive_bytesized/conf -n core_cloud_2 -s 3 -rf 2
+./bin/solr create -c core_sol_2 -d ./server/solr/configsets/data_driven_schema_configs_sol/conf -n core_sol_2 -s 3 -rf 2
+
+
+yarn jar solr-hadoop-job-2.2.4.jar com.lucidworks.hadoop.ingest.IngestJob -DidField=id -Dlww.commit.on.close=true -cls com.lucidworks.hadoop.ingest.CSVIngestMapper  -c core_1_sol -i /user/map-test/test-data/sohail_test.csv -of com.lucidworks.hadoop.io.LWMapRedOutputFormat -s http://10.20.202.100:8983/solr -ur 1
+
+
+
+Upload configs to zookeeper:
+Upload a configuration directory
+./server/scripts/cloud-scripts/zkcli.sh -zkhost 10.20.202.100:2181 \
+-cmd upconfig -confname data_driven_schema_configs_sol -confdir server/solr/configsets/data_driven_schema_configs_sol/conf
+
+
+
+CURL commands:
+
+http://localhost:8983/solr/admin/collections?action=DELETE&collection=collection1&shard=shard1&replica=core_node1
+==========================================================
+==========================================================
+org.apache.solr.handler.dataimport.FileDataSource.getFile(FileDataSource.java:123)
+
+
+ADD jar /home/admin/czhao/hive-solr/solr-hive-serde-2.2.5.jar;
+
+CREATE TABLE solr_index.documents (lineNumber string, filePath string, fileName string, fileExtension string, lineOutput string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\|' LINES TERMINATED BY '\n' STORED AS TEXTFILE
+LOCATION '/user/solr_input';
+
+CREATE EXTERNAL TABLE solr_index.index (lineNumber string, filePath string, fileName string, fileExtension string, lineOutput string)
+STORED BY 'com.lucidworks.hadoop.hive.LWStorageHandler'
+LOCATION '/tmp/solr'
+TBLPROPERTIES('solr.zkhost' = '10.20.202.100:2181,10.20.202.77:2181,10.20.202.102:2181/solr',
+'solr.collection' = 'core_cloud_1','solr.query' = '*:*');
+INSERT OVERWRITE TABLE solr_index.index SELECT * FROM solr_index.documents;
+
+
+hive -e "ADD jar /home/admin/czhao/hive-solr/solr-hive-serde-2.2.5.jar;INSERT OVERWRITE TABLE solr_index.index SELECT * FROM solr_index.documents;"
